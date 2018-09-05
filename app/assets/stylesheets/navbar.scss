@@ -1,0 +1,27 @@
+nav {
+  background-color: $dark-color;
+  font-family: $header-font;
+  color: $light-color;
+}
+
+.dropdown ul {
+  padding: 0;
+  list-style: none;
+  box-shadow: 0px 2px 6px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  left: 0;
+  margin-top: 2px;
+  top: 100%;
+  min-width: 90%;
+}
+.dropdown li {
+  background: #fff;
+  padding: 8px 10px 8px 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.dropdown li:hover {
+  background: #f6f6f6;
+  transition: background .2s ease;
+}
