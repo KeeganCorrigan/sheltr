@@ -1,0 +1,59 @@
+@import "shared_values";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: $primary-font;
+    color: $dark-color;
+  }
+}
+
+h1 {
+  font-size: 70px;
+  font-family: $important-font;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+main {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+.heading-with-margin {
+  margin-top: 10px;
+}

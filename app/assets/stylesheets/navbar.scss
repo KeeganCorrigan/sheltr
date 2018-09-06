@@ -1,0 +1,33 @@
+@import "shared_values";
+
+nav {
+  position: relative;
+  background-color: $light-color;
+  font-family: $header-font;
+  color: $dark-color;
+  font-size: 30px;
+  .fas {
+    color: $link-color;
+  }
+}
+
+.dropdown-toggle {
+  padding: .5em 2em;
+}
+
+ul.dropdown {
+  display:none;
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  margin-top: 0em;
+  min-width: 4em;
+  text-align: left;
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        display: block;
+      }
+   }
+}
