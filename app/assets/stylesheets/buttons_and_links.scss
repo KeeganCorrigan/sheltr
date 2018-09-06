@@ -10,10 +10,15 @@
 	align-items: center;
 }
 
-.fas {
+form .fas {
 	padding: 5px;
 	margin: 5px;
 	background-color: $light-color;
-	color: #1170C9;
+	color: $link-color;
 	border-radius: 10px;
+	}
+
+.fa-utensils {
+	width: 15%;
+	text-align: center;
 }

@@ -6,6 +6,9 @@ nav {
   font-family: $header-font;
   color: $dark-color;
   font-size: 30px;
+  .fas {
+    color: $link-color;
+  }
 }
 
 .dropdown-toggle {
