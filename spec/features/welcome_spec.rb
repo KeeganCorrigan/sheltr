@@ -5,13 +5,13 @@ describe "a visitor" do
     it "sees a search bar and button for finding shelters" do
       visit "/"
 
-      expect(page).to have_content("I need a place to stay")
+      expect(page).to have_content("I'm in")
+      expect(page).to have_content("And I need")
 
-      expect(page).to have_css(".search")
+      expect(page).to have_css(".night_shelter")
+      expect(page).to have_css(".day_shelter")
+      expect(page).to have_css(".food")
+      expect(page).to have_css(".crisis_service")
     end
   end
 end
-# As a visitor
-# When I visit /
-# I see a page that has a search bar for city of zip code
-# I see a button that says I need a place to stay

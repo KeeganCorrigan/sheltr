@@ -1,30 +1,29 @@
+@import "shared_values";
+
 nav {
   position: relative;
-  background-color: $dark-color;
+  background-color: $light-color;
   font-family: $header-font;
-  color: $light-color;
+  color: $dark-color;
+  font-size: 30px;
 }
 
 .dropdown-toggle {
-  padding: .5em 1em;
-  background: #777;
-  border-radius: .2em .2em 0 0;
+  padding: .5em 2em;
 }
 
 ul.dropdown {
   display:none;
   position: absolute;
-  background-color: $dark-color;
   top: 100%;
-  margin-top: .5em;
-  min-width: 12em;
-  padding: 0;
-  border-radius: 0 0 .2em .2em;
+  margin: 0;
+  margin-top: 0em;
+  min-width: 4em;
+  text-align: left;
     li {
       list-style-type: none;
       a {
         text-decoration: none;
-        padding: .5em 1em;
         display: block;
       }
    }

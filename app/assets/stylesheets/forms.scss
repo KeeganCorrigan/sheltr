@@ -1,0 +1,19 @@
+@import "shared_values";
+
+.search-input {
+  width: 80%;
+  border-style: solid;
+  border-color: $dark-color;
+  border-width: 0px 0px 2px 0px;
+  font-size: 1.5rem;
+}
+
+.heading-description-text {
+  color: gray;
+  font-size: 20px;
+  width: 50%;
+}
+
+.submit-text {
+  line-height: 1.1;
+}

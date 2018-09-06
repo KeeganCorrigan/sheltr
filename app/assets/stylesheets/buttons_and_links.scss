@@ -1,0 +1,19 @@
+@import "shared_values";
+
+.submit-button {
+	margin: 2% 0% 2% 0%;
+	width: 80%;
+	text-align: left;
+	font-size: 40px;
+	font-family: $primary-font;
+	display: flex;
+	align-items: center;
+}
+
+.fas {
+	padding: 5px;
+	margin: 5px;
+	background-color: $light-color;
+	color: #1170C9;
+	border-radius: 10px;
+}

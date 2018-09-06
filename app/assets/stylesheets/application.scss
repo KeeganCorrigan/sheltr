@@ -1,7 +1,12 @@
 @import "basscss/basscss";
 @import "basscss/basscss-addons";
+@import "base";
 @import "shared_values";
 @import "navbar";
+@import "buttons_and_links";
+@import "forms";
+@import "tables";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
