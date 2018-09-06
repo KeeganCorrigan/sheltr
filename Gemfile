@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'figaro'
 gem 'basscss-rails'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
