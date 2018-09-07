@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'figaro'
+gem 'faraday'
 gem 'basscss-rails'
 gem 'jquery-rails'
 

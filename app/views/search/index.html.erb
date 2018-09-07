@@ -46,17 +46,20 @@
         <% end %>
       <% end %>
       </div>
-      <h1 class="heading-with-margin"> ABOUT SHELTR </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="mxn1">
+        <%= link_to "Sleep", search_path, class:"btn button-narrow"%> /
+        <%= link_to "stay", search_path, class:"btn button-narrow" %> /
+        <%= link_to "Food", search_path, class:"btn button-narrow" %> /
+          <%= link_to "Help", search_path, class:"btn button-narrow" %>
+      </div>
 
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-      <ul>
-        <li>Shelter</li>
-        <li>Day shelters</li>
-        <li>Food</li>
-        <li>Services</li>
-      </ul>
+      <% @presenter.locations.each do |location| %>
+        <p class="name"> <%= location.name %></p>
+        <p class="formatted_address"> <%= location.formatted_address %></p>
+        <p class="formatted_phone_number"> <%= location.formatted_phone_number %></p>
+        <p class="open_now"> <%= location.open_now %></p>
+        <p class="website"> <%= location.website %></p>
+      <% end %>
     </div>
   </div>
 </main>
