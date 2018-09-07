@@ -11,9 +11,9 @@ describe "a visitor" do
 
       expect(current_path).to eq("/search")
 
-      expect(page).to have_css(".shelter")
+      expect(page).to have_css(".location")
 
-      within(first(".shelter")) do
+      within(first(".location")) do
         expect(page).to have_css(".name")
         expect(page).to have_css(".formatted_address")
         expect(page).to have_css(".formatted_phone_number")

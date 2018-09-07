@@ -53,12 +53,14 @@
           <%= link_to "Help", search_path, class:"btn button-narrow" %>
       </div>
 
-      <% @presenter.locations.each do |location| %>
-        <p class="name"> <%= location.name %></p>
-        <p class="formatted_address"> <%= location.formatted_address %></p>
-        <p class="formatted_phone_number"> <%= location.formatted_phone_number %></p>
-        <p class="open_now"> <%= location.open_now %></p>
-        <p class="website"> <%= location.website %></p>
+      <% @locations.each do |location| %>
+        <div class="location">
+          <p class="name"> <%= location.name %></p>
+          <p class="formatted_address"> <%= location.formatted_address %></p>
+          <p class="formatted_phone_number"> <%= location.formatted_phone_number %></p>
+          <p class="open_now"> <%= location.open_now %></p>
+          <p class="website"> <%= location.website %></p>
+        </div>
       <% end %>
     </div>
   </div>
