@@ -5,7 +5,7 @@ describe "a visitor" do
     it "enters a zip code and clicks on search" do
       visit "/"
 
-      fill_in :q, with: "80204"
+      fill_in :q, with: "Denver"
 
       click_on "I NEED SLEEP"
 
@@ -23,13 +23,3 @@ describe "a visitor" do
     end
   end
 end
-
-
-# As a visitor
-# When i enter a zip code or city into the search bar on root
-# and click on I need a place to stay
-# I am taken to a page that lists the closest shelters with the following information:
-# address
-# phone number
-# web address
-# hours (including whether they are open)
