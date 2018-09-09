@@ -4,7 +4,7 @@
 <h2>I need help and I'm in:</h2>
 
 <%= form_tag("/search", method: "get", class: "search") do %>
-  <%= text_field_tag :q, nil, placeholder: 'ZIP OR CITY', class:"search-input"  %>
+  <%= text_field_tag :q, nil, value: request.location.city, class:"search-input"  %>
   <br>
 
   <h1 class="m0">STEP 2</h1>
