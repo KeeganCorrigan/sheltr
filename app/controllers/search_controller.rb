@@ -1,10 +1,15 @@
 class SearchController < ApplicationController
   def index
-    locations = GooglePlaceService.new.locations(params[:subaction], params[:q])
+    set_session_zip(params[:q])
 
+    @presenter = GooglePlacePresenter.new(params[:subaction], session[:zip])
+  end
 
-    @locations = locations.map do |place|
-      Location.new(place)
-    end.compact
+  private
+
+  def set_session_zip(location)
+    if location
+      session[:zip] = location
+    end
   end
 end
