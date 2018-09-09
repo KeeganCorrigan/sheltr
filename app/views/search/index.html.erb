@@ -1,67 +1,61 @@
 <main>
   <div class="clearfix">
     <div class="sm-col sm-col-5">
+        <%= render partial:"/partials/search_form" %>
+    </div>
 
-      <div class="flex flex-center">
-        <div class="flex-auto">
-          <h1 class="m0">STEP 1:</h1>
+    <div class="md-col md-col-7">
+        <div class="mxn1 flex-row">
+          <h2><%= link_to "Sleep", search_path, class:"btn button-narrow menu-item"%></h2> /
+          <h2><%= link_to "stay", search_path, class:"btn button-narrow menu-item" %></h2> /
+          <h2><%= link_to "Food", search_path, class:"btn button-narrow menu-item" %></h2> /
+            <h2><%= link_to "Help", search_path, class:"btn button-narrow menu-item" %></h2>
         </div>
-        <div>
-          <p class="heading-description-text m0"> Tell us where you are<p>
-        </div>
-      </div>
 
-      <h2>I need help and I'm in:</h2>
-          <%= form_tag("/search", method: "get", class: "search") do %>
-          <%= text_field_tag :q, nil, placeholder: 'ZIP OR CITY', class:"search-input"  %>
+        <% @locations.each do |location| %>
+          <div class="clearfix">
+            <div class="location flex-row">
+
+              <div class="sm-col sm-col-3">
+                <% if location.hours.length == 2 && location.open_now  == "true" %>
+                  <div class="loc-hours btn btn-primary bg-green">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                    <p class="hours center m0 p0">TO</p>
+                    <p class="hours center m0 p0"><%= location.hours[1] %></p>
+                  </div>
+                <% elsif location.hours.length == 2 && location.open_now == "false" %>
+                  <div class="loc-hours btn btn-primary bg-red">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                    <p class="hours center m0 p0"> TO </p>
+                    <p class="hours center m0 p0"><%= location.hours[1] %></p>
+                  </div>
+                <% elsif location.hours[0] == "Open 24 hours" %>
+                  <div class="loc-hours btn btn-primary bg-green">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                  </div>
+                <% elsif location.hours.length == 1 %>
+                  <div class="loc-hours btn btn-primary bg-red">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                  </div>
+                <% else %>
+                  <div class="loc-hours btn btn-primary bg-gray">
+                    <p class="hours center m0 p0">No</p>
+                    <p class="hours center m0 p0">Hours </p>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="sm-col sm-col-9">
+                <p class="name info-text m0 p0"> <%= location.name %></p>
+                <p class="formatted_address info-text m0 p0"> <%= location.formatted_address %></p>
+                <p class="formatted_phone_number info-text m0 p0"> <%= location.formatted_phone_number %></p>
+                <p class="website info-text m0 p0"> <%= link_to "More info", location.website %></p>
+              </div>
+            </div>
+          </div>
           <br>
-
-      <div class="flex flex-center py3">
-        <div class="flex-auto">
-          <h1 class="m0">STEP 2:</h1>
-        </div>
-        <div>
-          <p class="heading-description-text m0">Tell us what you need</p>
-        </div>
+        <% end %>
       </div>
-
-        <%= button_tag :submit, name: "subaction", value: "homeless_shelter", class:"btn btn-primary submit-button night-shelter" do %>
-              <i class="fas fa-bed m0"></i>
-              <p class="m0 submit-text">I NEED SLEEP</p>
-        <% end %>
-
-        <%= button_tag :submit, class:"btn btn-primary submit-button day-shelter" do %>
-          <i class="fas fa-wifi m0"></i>
-          <p class="m0 submit-text">  I NEED SOMEWHERE TO GO</p>
-        <% end %>
-
-        <%= button_tag :submit, class:"btn btn-primary submit-button food" do %>
-          <i class="fas fa-utensils m0"></i>
-          <p class="m0 submit-text"> I NEED FOOD </p>
-        <% end %>
-
-        <%= button_tag :submit, class:"btn btn-primary submit-button crisis-service" do %>
-            <i class="fas fa-hands-helping"></i>
-          <p class="m0 submit-text"> I NEED TO TALK </p>
-        <% end %>
-      <% end %>
-      </div>
-      <div class="mxn1">
-        <%= link_to "Sleep", search_path, class:"btn button-narrow"%> /
-        <%= link_to "stay", search_path, class:"btn button-narrow" %> /
-        <%= link_to "Food", search_path, class:"btn button-narrow" %> /
-          <%= link_to "Help", search_path, class:"btn button-narrow" %>
-      </div>
-
-      <% @locations.each do |location| %>
-        <div class="location">
-          <p class="name"> <%= location.name %></p>
-          <p class="formatted_address"> <%= location.formatted_address %></p>
-          <p class="formatted_phone_number"> <%= location.formatted_phone_number %></p>
-          <p class="open_now"> <%= location.open_now %></p>
-          <p class="website"> <%= location.website %></p>
-        </div>
-      <% end %>
     </div>
   </div>
 </main>

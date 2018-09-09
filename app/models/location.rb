@@ -8,12 +8,12 @@ class Location
               :name,
               :hours
 
-  def initialize(data, open_now = nil)
+  def initialize(data)
     @name = data[:result][:name]
     @formatted_address = data[:result][:formatted_address]
     @formatted_phone_number = data[:result][:formatted_phone_number]
     @website = data[:result][:website] || "Unknown"
-    @open_now = open_now || "Unknown"
+    @open_now = data[:open_now].to_s || "Unknown"
     @hours = validate_hours(data) || "unknown"
   end
 
