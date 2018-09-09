@@ -1,0 +1,61 @@
+<main>
+  <div class="clearfix">
+    <div class="sm-col sm-col-5">
+        <%= render partial:"/partials/search_form" %>
+    </div>
+
+    <div class="md-col md-col-7">
+        <div class="mxn1 flex-row">
+          <h2><%= link_to "Sleep", search_path, class:"btn button-narrow menu-item"%></h2> /
+          <h2><%= link_to "stay", search_path, class:"btn button-narrow menu-item" %></h2> /
+          <h2><%= link_to "Food", search_path, class:"btn button-narrow menu-item" %></h2> /
+            <h2><%= link_to "Help", search_path, class:"btn button-narrow menu-item" %></h2>
+        </div>
+
+        <% @locations.each do |location| %>
+          <div class="clearfix">
+            <div class="location flex-row">
+
+              <div class="sm-col sm-col-3">
+                <% if location.hours.length == 2 && location.open_now  == "true" %>
+                  <div class="loc-hours btn btn-primary bg-green">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                    <p class="hours center m0 p0">TO</p>
+                    <p class="hours center m0 p0"><%= location.hours[1] %></p>
+                  </div>
+                <% elsif location.hours.length == 2 && location.open_now == "false" %>
+                  <div class="loc-hours btn btn-primary bg-red">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                    <p class="hours center m0 p0"> TO </p>
+                    <p class="hours center m0 p0"><%= location.hours[1] %></p>
+                  </div>
+                <% elsif location.hours[0] == "Open 24 hours" %>
+                  <div class="loc-hours btn btn-primary bg-green">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                  </div>
+                <% elsif location.hours.length == 1 %>
+                  <div class="loc-hours btn btn-primary bg-red">
+                    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
+                  </div>
+                <% else %>
+                  <div class="loc-hours btn btn-primary bg-gray">
+                    <p class="hours center m0 p0">No</p>
+                    <p class="hours center m0 p0">Hours </p>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="sm-col sm-col-9">
+                <p class="name info-text m0 p0"> <%= location.name %></p>
+                <p class="formatted_address info-text m0 p0"> <%= location.formatted_address %></p>
+                <p class="formatted_phone_number info-text m0 p0"> <%= location.formatted_phone_number %></p>
+                <p class="website info-text m0 p0"> <%= link_to "More info", location.website %></p>
+              </div>
+            </div>
+          </div>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

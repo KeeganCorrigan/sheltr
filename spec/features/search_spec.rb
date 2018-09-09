@@ -2,35 +2,26 @@ require "rails_helper"
 
 describe "a visitor" do
   context "visits /" do
-    xit "enters a zip code and clicks on search" do
-      visit "/"
+    it "enters a zip code and clicks on I NEED SLEEP" do
+      VCR.use_cassette("google_place_service_homeless_shelter_locations") do
+        visit "/"
 
-      fill_in :q, with: "80204"
+        fill_in :q, with: "Denver"
 
-      click_on "Search"
+        click_on "I NEED SLEEP"
 
-      expect(current_path).to eq("/search")
+        expect(current_path).to eq("/search")
 
-      click_on "Shelters"
+        expect(page).to have_css(".location")
 
-      expect(page).to have_css(".shelter")
-
-      within(first(".shelter")) do
-        expect(page).to have_css(".address")
-        expect(page).to have_css(".phone_number")
-        expect(page).to have_css(".website")
-        expect(page).to have_css(".hours")
+        within(first(".location")) do
+          expect(page).to have_css(".name")
+          expect(page).to have_css(".formatted_address")
+          expect(page).to have_css(".formatted_phone_number")
+          expect(page).to have_css(".website")
+          expect(page).to have_css(".hours")
+        end
       end
     end
   end
 end
-
-
-# As a visitor
-# When i enter a zip code or city into the search bar on root
-# and click on I need a place to stay
-# I am taken to a page that lists the closest shelters with the following information:
-# address
-# phone number
-# web address
-# hours (including whether they are open)

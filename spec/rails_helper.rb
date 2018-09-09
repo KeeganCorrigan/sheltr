@@ -15,6 +15,13 @@ require 'rspec/rails'
 require 'webmock/rspec'
 require 'vcr'
 
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+  config.allow_http_connections_when_no_cassette = true
+  config.filter_sensitive_data('<key>') { ENV["GOOGLE_API_KEY"] }
+end
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
