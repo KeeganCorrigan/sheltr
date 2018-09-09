@@ -5,12 +5,7 @@
     </div>
 
     <div class="md-col md-col-7">
-        <div class="mxn1 flex-row">
-          <h2><%= link_to "Sleep", search_path, class:"btn button-narrow menu-item"%></h2> /
-          <h2><%= link_to "stay", search_path, class:"btn button-narrow menu-item" %></h2> /
-          <h2><%= link_to "Food", search_path, class:"btn button-narrow menu-item" %></h2> /
-            <h2><%= link_to "Help", search_path, class:"btn button-narrow menu-item" %></h2>
-        </div>
+        <%= render partial:"/partials/onscreen_menu" %>
 
         <% @locations.each do |location| %>
           <div class="clearfix">

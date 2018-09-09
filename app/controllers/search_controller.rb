@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   def index
+
     locations = GooglePlaceService.new.locations(params[:subaction], params[:q])
 
 
