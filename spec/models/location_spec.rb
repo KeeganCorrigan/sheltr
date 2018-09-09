@@ -35,7 +35,7 @@ describe Location, type: :model do
 
   describe "instance methods" do
     describe "#validate_hours" do
-      it "validates presence of hours and returns false if not present" do
+      it "validates presence of hours and returns unknown if not present" do
         location_data = {
                           result:
                             {
