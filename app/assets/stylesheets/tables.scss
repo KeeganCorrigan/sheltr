@@ -14,18 +14,18 @@
 }
 
 .bg-green {
-  background-color: #2dc937;
+  background-color: $open-color;
   width: 90%;
   padding: 10px;
 }
 
 .bg-red {
-  background-color: #cc3232;
+  background-color: $closed-color;
   width: 90%;
 }
 
 .bg-gray {
-  background-color: #e7b416;
+  background-color: $unknown-color;
   width: 90%;
 }
 
