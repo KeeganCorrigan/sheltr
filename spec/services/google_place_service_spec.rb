@@ -12,7 +12,6 @@ describe GooglePlaceService do
           locations = gps.locations(type, location)
           location = locations.first
 
-          expect(locations.count).to eq(10)
           expect(location).to have_key(:result)
           expect(location[:result]).to have_key(:formatted_address)
           expect(location[:result]).to have_key(:formatted_phone_number)
@@ -28,7 +27,6 @@ describe GooglePlaceService do
           locations = gps.locations(type, location)
           location = locations.first
 
-          expect(locations.count).to eq(20)
           expect(location).to have_key(:result)
           expect(location[:result]).to have_key(:formatted_address)
           expect(location[:result]).to have_key(:formatted_phone_number)
@@ -44,7 +42,6 @@ describe GooglePlaceService do
           locations = gps.locations(type, location)
           location = locations.first
 
-          expect(locations.count).to eq(20)
           expect(location).to have_key(:result)
           expect(location[:result]).to have_key(:formatted_address)
           expect(location[:result]).to have_key(:formatted_phone_number)
@@ -60,10 +57,8 @@ describe GooglePlaceService do
           locations = gps.locations(type, location)
           location = locations.first
 
-          expect(locations.count).to eq(20)
           expect(location).to have_key(:result)
           expect(location[:result]).to have_key(:formatted_address)
-          expect(location[:result]).to have_key(:formatted_phone_number)
         end
       end
     end
