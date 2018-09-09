@@ -6,7 +6,7 @@ class GooglePlacePresenter
   end
 
   def locations
-    unsorted_locations.sort_by { |place| place.open_now}.reverse
+    unsorted_locations.sort_by { |place| place.open_now }.reverse
   end
 
   private

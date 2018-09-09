@@ -14,6 +14,7 @@ describe GooglePlacePresenter do
 
           expect(locations).to be_a(Array)
           expect(locations.first).to be_a(Location)
+          expect(locations.first.open_now).to eq("true")
         end
       end
     end
