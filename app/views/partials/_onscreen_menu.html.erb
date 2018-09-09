@@ -1,6 +1,7 @@
 <div class="mxn1 flex-row">
-  <h2><%= link_to "Sleep", search_path(subaction:"homeless_shelter"), class:"btn button-narrow menu-item"%></h2> /
-  <h2><%= link_to "stay", search_path(subaction:"library"), class:"btn button-narrow menu-item" %></h2> /
-  <h2><%= link_to "Food", search_path(subaction:"food+for+homeless"), class:"btn button-narrow menu-item" %></h2> /
-  <h2><%= link_to "Help", search_path(subaction:"crisis+service"), class:"btn button-narrow menu-item" %></h2>
+  <h2><%= link_to "Sleep", search_path(subaction:"homeless_shelter"), class:"btn button-narrow menu-item link-override"%></h2> /
+  <h2><%= link_to "stay", search_path(subaction:"library"), class:"btn button-narrow menu-item link-override" %></h2> /
+  <h2><%= link_to "Food", search_path(subaction:"food+for+homeless"), class:"btn button-narrow menu-item link-override" %></h2> /
+  <h2><%= link_to "Help", search_path(subaction:"crisis+service"), class:"btn button-narrow menu-item link-override" %></h2>
+  <p> (<%= @current_search %>)<p>
 </div>
