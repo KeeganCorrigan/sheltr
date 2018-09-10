@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $('.dropdown-toggle').click(function(){
-    $(this).next('.dropdown').toggle();
+    $(this).next('.dropdown').toggle(250);
   });
 
   $(document).click(function(e) {

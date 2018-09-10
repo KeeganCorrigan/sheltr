@@ -2,7 +2,7 @@
 
 nav {
   position: relative;
-  background-color: $light-color;
+  background-color: whitesmoke;
   font-family: $header-font;
   color: $dark-color;
   font-size: 30px;
@@ -30,4 +30,15 @@ ul.dropdown {
         display: block;
       }
    }
+}
+
+@media screen and (max-width: 1000px) {
+  ul.dropdown {
+    display: none;
+    position: relative;
+    li {
+      padding: 10px;
+      border-bottom: 4px solid black;
+    }
+  }
 }
