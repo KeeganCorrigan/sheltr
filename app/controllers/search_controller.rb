@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
     set_session_zip(params[:q])
-    @current_search = session[:zip]
+    # @current_search = session[:zip]
     @presenter = GooglePlacePresenter.new(params[:subaction], session[:zip])
   end
 

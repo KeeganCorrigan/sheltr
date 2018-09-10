@@ -1,8 +1,11 @@
 class GooglePlacePresenter
+  attr_reader :current_search
+
   def initialize(type, location)
     @type = type
     @location = location
     @google_place_service = GooglePlaceService.new
+    @current_search = location
   end
 
   def locations
