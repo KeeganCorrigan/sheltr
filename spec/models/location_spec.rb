@@ -54,5 +54,44 @@ describe Location, type: :model do
         expect(location_1.hours).to eq("unknown")
       end
     end
+
+    describe "#open_status" do
+      it "returns string to render partial based on hours and open status" do
+        location_data = {
+                          result:
+                            {
+                              formatted_address: "iojasdoij",
+                              formatted_phone_number: "0909jiad",
+                              website: "0j09j90ajdpoad",
+                              name: "ij90jasp",
+                              opening_hours: {
+                                 weekday_text: ["Monday: 10:00 AM – 5:00 PM",
+                                 "Tuesday: Closed",
+                                 "Wednesday: 10:00 AM – 5:00 PM",
+                                 "Thursday: 10:00 AM – 5:00 PM",
+                                 "Friday: 10:00 AM – 5:00 PM",
+                                 "Saturday: 11:00 AM – 5:00 PM",
+                                 "Sunday: 12:00 – 5:00 PM"]
+                              }
+                            },
+                          open_now: "true"
+                        }
+
+        location = Location.new(location_data)
+        expect(location.hours_status).to eq("location_open_with_hours")
+
+        # location = create(:location, open_now: "false")
+        # expect(location.hours_status).to eq("location_closed_with_hours")
+
+        # location = create(:location, hours: ["Open 24 hours"])
+        # expect(location.hours_status).to eq("location_open_24_hours")
+
+        # location = create(:location, hours: ["Closed"])
+        # expect(location.hours_status).to eq("location_closed")
+
+        # location = create(:location, hours: "unknown")
+        # expect(location.hours_status).to eq("location_hours_unknown")
+      end
+    end
   end
 end

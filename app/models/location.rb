@@ -17,6 +17,16 @@ class Location
     @hours = validate_hours(data) || "unknown"
   end
 
+  def hours_status
+    return "location_open_with_hours" if @hours.length == 2 && @open_now == "true"
+    return "location_closed_with_hours" if @hours.length == 2 && @open_now == "false"
+    return "location_open_24_hours" if @hours[0] == "Open 24 hours"
+    return "location_closed" if @hours[0] == "Closed"
+    return "location_hours_unknown" if @hours == "unknown"
+  end
+
+  private
+
   def validate_hours(data)
     if data[:result][:opening_hours]
       hours_for_today(data[:result][:opening_hours][:weekday_text]).split(": ")[1].gsub(/\u2013/,'-').split(" - ")
