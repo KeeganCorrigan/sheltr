@@ -23,6 +23,25 @@ VCR.configure do |config|
   config.filter_sensitive_data('<key>') { ENV["GOOGLE_API_KEY"] }
 end
 
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+
+  omniauth_hash = {
+                    provider: "google",
+                    uid: "12345678910",
+                    info: {
+                      email: "keegan.rw.corrigan@gmail.com",
+                      first_name: "keegan",
+                      last_name: "corrigan"
+                    },
+                    credentials: {
+                      token: "thisisfake",
+                    }
+                  }
+
+  OmniAuth.config.add_mock(:google_oauth2, omniauth_hash)
+end
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e

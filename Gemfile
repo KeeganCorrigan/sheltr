@@ -18,6 +18,8 @@ gem 'faraday'
 gem 'basscss-rails'
 gem 'jquery-rails'
 gem 'geocoder'
+gem 'omniauth-google-oauth2'
+gem 'omniauth'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
