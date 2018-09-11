@@ -18,5 +18,20 @@ describe GooglePlacePresenter do
         end
       end
     end
+
+    describe "#first_open_location" do
+      it "returns first open location" do
+        VCR.use_cassette("google_place_service_homeless_shelter_locations") do
+          type = "homeless_shelter"
+          location = "Denver"
+
+          gpp = GooglePlacePresenter.new(type, location)
+
+          location = gpp.first_open_location
+
+          expect(location).to be_a(String)
+        end
+      end
+    end
   end
 end

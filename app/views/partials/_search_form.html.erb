@@ -1,15 +1,14 @@
-<h1 class="m0">STEP 1</h1>
-<p class="heading-description-text m0"> Tell us where you are<p>
+<h1 class="heading-with-margin">STEP 1</h1>
+
 
 <h2>I need help and I'm in:</h2>
 
 <%= form_tag("/search", method: "get", class: "search") do %>
   <%= text_field_tag :q, nil, value: request.location.city, class:"search-input"  %>
   <br>
-
+  <br>
   <h1 class="m0">STEP 2</h1>
 
-  <p class="heading-description-text m0">Tell us what you need</p>
 
   <%= button_tag :submit, name: "subaction", value: "homeless_shelter", class:"btn btn-primary submit-button night-shelter" do %>
     <i class="fas fa-bed m0"></i>

@@ -79,18 +79,6 @@ describe Location, type: :model do
 
         location = Location.new(location_data)
         expect(location.hours_status).to eq("location_open_with_hours")
-
-        # location = create(:location, open_now: "false")
-        # expect(location.hours_status).to eq("location_closed_with_hours")
-
-        # location = create(:location, hours: ["Open 24 hours"])
-        # expect(location.hours_status).to eq("location_open_24_hours")
-
-        # location = create(:location, hours: ["Closed"])
-        # expect(location.hours_status).to eq("location_closed")
-
-        # location = create(:location, hours: "unknown")
-        # expect(location.hours_status).to eq("location_hours_unknown")
       end
     end
   end
