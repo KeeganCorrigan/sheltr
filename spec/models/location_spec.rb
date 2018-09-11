@@ -66,7 +66,7 @@ describe Location, type: :model do
                               name: "ij90jasp",
                               opening_hours: {
                                  weekday_text: ["Monday: 10:00 AM – 5:00 PM",
-                                 "Tuesday: Closed",
+                                 "Tuesday: 10:00 AM – 5:00 PM",
                                  "Wednesday: 10:00 AM – 5:00 PM",
                                  "Thursday: 10:00 AM – 5:00 PM",
                                  "Friday: 10:00 AM – 5:00 PM",
