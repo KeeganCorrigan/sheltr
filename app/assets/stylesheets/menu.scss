@@ -3,3 +3,19 @@
 .link-override {
   color: $link-color;
 }
+
+@media screen and (max-width: 1000px) {
+  .mxn1 {
+    font-size: 11px;
+    background-color: whitesmoke;
+    margin: 10px 0px 10px 0px;
+    p {
+      font-size: 11px;
+    }
+
+    a {
+      margin: 5px;
+      padding: 5px;
+    }
+  }
+}

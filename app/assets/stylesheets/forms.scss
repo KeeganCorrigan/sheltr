@@ -17,3 +17,14 @@
 .submit-text {
   line-height: 1.1;
 }
+
+@media screen and (max-width: 1000px) {
+  .search-form {
+    text-align: center;
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

@@ -1,32 +1,35 @@
-<h1 class="heading-with-margin">STEP 1</h1>
+<div class="search-form">
+  <h1 class="heading-with-margin">STEP 1</h1>
 
 
-<h2>I need help and I'm in:</h2>
+  <h2>I need help and I'm in:</h2>
 
-<%= form_tag("/search", method: "get", class: "search") do %>
-  <%= text_field_tag :q, nil, value: request.location.city, class:"search-input"  %>
-  <br>
-  <br>
-  <h1 class="m0">STEP 2</h1>
+  <%= form_tag("/search", method: "get", class: "search") do %>
+    <%= text_field_tag :q, nil, value: request.location.city, class:"search-input"  %>
+    <br>
+    <br>
+    <h1 class="m0">STEP 2</h1>
 
+    <div class="button-container">
+      <%= button_tag :submit, name: "subaction", value: "homeless_shelter", class:"btn btn-primary submit-button night-shelter" do %>
+        <i class="fas fa-bed m0"></i>
+        <p class="m0 submit-text">I NEED SLEEP</p>
+      <% end %>
 
-  <%= button_tag :submit, name: "subaction", value: "homeless_shelter", class:"btn btn-primary submit-button night-shelter" do %>
-    <i class="fas fa-bed m0"></i>
-    <p class="m0 submit-text">I NEED SLEEP</p>
+      <%= button_tag :submit, name: "subaction", value: "library",class:"btn btn-primary submit-button day-shelter" do %>
+        <i class="fas fa-wifi m0"></i>
+        <p class="m0 submit-text">  I NEED SOMEWHERE TO GO</p>
+      <% end %>
+
+      <%= button_tag :submit, name: "subaction", value: "food+for+homeless", class:"btn btn-primary submit-button food" do %>
+        <i class="fas fa-utensils m0"></i>
+        <p class="m0 submit-text"> I NEED FOOD </p>
+      <% end %>
+
+      <%= button_tag :submit, name: "subaction", value: "crisis+service", class:"btn btn-primary submit-button crisis-service" do %>
+        <i class="fas fa-hands-helping"></i>
+        <p class="m0 submit-text"> I NEED TO TALK </p>
+      <% end %>
+    </div>
   <% end %>
-
-  <%= button_tag :submit, name: "subaction", value: "library",class:"btn btn-primary submit-button day-shelter" do %>
-    <i class="fas fa-wifi m0"></i>
-    <p class="m0 submit-text">  I NEED SOMEWHERE TO GO</p>
-  <% end %>
-
-  <%= button_tag :submit, name: "subaction", value: "food+for+homeless", class:"btn btn-primary submit-button food" do %>
-    <i class="fas fa-utensils m0"></i>
-    <p class="m0 submit-text"> I NEED FOOD </p>
-  <% end %>
-
-  <%= button_tag :submit, name: "subaction", value: "crisis+service", class:"btn btn-primary submit-button crisis-service" do %>
-    <i class="fas fa-hands-helping"></i>
-    <p class="m0 submit-text"> I NEED TO TALK </p>
-  <% end %>
-<% end %>
+</div>
