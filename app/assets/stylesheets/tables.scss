@@ -36,3 +36,22 @@
 .loc-hours {
   text-align: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .hours {
+    font-size: 12px;
+  }
+  .btn-primary {
+    background-color: $light-color;
+    color: black;
+  }
+  .bg-green {
+    border-right: 2px solid $open-color;
+  }
+  .bg-red {
+    border-right: 2px solid $closed-color;
+  }
+  .bg-gray {
+    border-right: 2px solid $unknown-color;
+  }
+}
