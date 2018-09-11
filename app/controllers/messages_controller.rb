@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def reply
+    binding.pry
     message_body = params["Body"]
     from_number = params["From"]
     boot_twilio
@@ -13,6 +14,7 @@ class MessagesController < ApplicationController
       body: "#{@presenter.first_open_location}"
     )
 
+    binding.pry
   end
 
   private

@@ -1,5 +1,5 @@
 class FakeSMS
-  Message = Struct.new(:from, :to, :body)
+  Message = Struct.new(:data)
 
   cattr_accessor :messages
   self.messages = []

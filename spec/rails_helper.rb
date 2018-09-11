@@ -50,6 +50,15 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
+
+  config.before(:each) do
+    stub_const("Twilio::REST::Client", FakeSMS)
+  end
+
+  # config.before(:each), type: :feature do
+  #   FakeSMS.messages = []
+  # end
+
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.include FactoryBot::Syntax::Methods
