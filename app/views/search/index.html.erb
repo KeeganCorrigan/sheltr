@@ -7,14 +7,14 @@
     <div class="sm-col sm-col-7">
         <%= render partial:"/partials/onscreen_menu" %>
 
-        <% @presenter.locations.each do |location| %>
+        <% @presenter.locations.each_with_index do |location, index| %>
           <div class="clearfix">
             <div class="location flex-row">
+              <p class="<%= index %>"><%= index %></p>
 
               <div class="sm-col sm-col-3">
                 <%= render partial:"/partials/#{location.hours_status}", :locals => {:location => location } %>
               </div>
-
               <div class="sm-col sm-col-9">
                 <p class="name info-text m0 p0"> <%= location.name %></p>
                 <p class="formatted_address info-text m0 p0"> <%= location.formatted_address %></p>
@@ -23,6 +23,18 @@
               </div>
             </div>
           </div>
+          <br>
+          <button
+            class="btn btn-primary map-button"
+            id="map<%= index %>"
+            value="<%= location.location[0].to_s.html_safe %> <%= location.location[1].to_s.html_safe %>"
+          >
+            View on Map
+          </button>
+          <div id="map<%= index %>" class="map"></div>
+
+          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_API_KEY"] %>&callback=initMap"
+            async defer></script>
           <br>
         <% end %>
       </div>

@@ -12,7 +12,7 @@ class GooglePlaceService
       payload = get_url("/maps/api/place/details/json?key=#{ENV["GOOGLE_API_KEY"]}&place_id=#{place[:place_id]}&fields=formatted_address,formatted_phone_number,website,name,opening_hours/weekday_text")
 
       payload[:open_now] = place[:opening_hours][:open_now] if place[:opening_hours]
-
+      payload[:location] = [place[:geometry][:location][:lat], place[:geometry][:location][:lng]]
       payload
     end
   end
