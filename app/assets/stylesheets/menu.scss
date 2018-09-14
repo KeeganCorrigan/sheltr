@@ -12,10 +12,25 @@
     p {
       font-size: 11px;
     }
-
     a {
       margin: 5px;
       padding: 5px;
     }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .mxn1 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .current-search-text {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  h2 {
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }

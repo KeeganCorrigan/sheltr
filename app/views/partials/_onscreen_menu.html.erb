@@ -3,5 +3,5 @@
   <h2><%= link_to t(".stay"), search_path(subaction:"library"), class:"btn button-narrow menu-item link-override" %></h2> /
   <h2><%= link_to t(".food"), search_path(subaction:"food+for+homeless"), class:"btn button-narrow menu-item link-override" %></h2> /
   <h2><%= link_to t(".help"), search_path(subaction:"crisis+service"), class:"btn button-narrow menu-item link-override" %></h2>
-  <p> (<%= @presenter.current_search %>)<p>
+  <p class="current-search-text"> (<%= @presenter.current_search %>)<p>
 </div>
