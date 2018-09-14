@@ -5,3 +5,44 @@ es:
       info_1: "Sheltr está destinado a conectar personas que necesitan ayuda con recursos. Actualmente, puedes buscar albergues, lugares para pasar el día, comida gratis y ayuda con la salud mental."
       info_2: Sheltr está diseñado para ser fácil de usar, receptivo e intuitivo. No todo el mundo sabe cómo navegar menús densos, y con suerte Sheltr puede ayudar.
       info_3: "Hay alrededor <strong>500,000</strong> personas sin hogar en los Estados Unidos. Casi <strong>20%</strong> de la población vive por debajo de la línea de pobreza (menos que <strong>$23,000 un año para una familia de 4</strong>). Si está interesado en ayudar, voluntario en un refugio local, done ropa o artículos de higiene, o done dinero."
+
+
+  welcome:
+    index:
+      how_to:
+        <h1 class="heading-with-margin"> CÓMO UTILIZAR </h1>
+        <p>Shelter te permitirá encontrar:</p>
+
+        <ul>
+          <li><i class="fas fa-caret-right"></i>Un lugar para dormir gratis</li>
+          <li><i class="fas fa-caret-right"></i> Un lugar para pasar el rato (con wifi)</li>
+          <li><i class="fas fa-caret-right"></i> Un lugar para obtener comida gratis</li>
+          <li><i class="fas fa-caret-right"></i> Un lugar para obtener ayuda</li>
+        </ul>
+
+        <p>Si necesita atención médica inmediata, <strong>marcar 911</strong>.</p>
+        <p>Escriba un <strong>CÓDIGO POSTAL</strong> o <strong>CIUDAD</strong> y luego haz clic en lo que necesitas!</p>
+
+        <h2>Leyendo tus resultados:</h2>
+
+        <p>Qué significan los colores?</p>
+
+        <p><i class="fas fa-square square-green"></i>  <strong>ABIERTO</strong>, por favor visite!<p>
+        <p><i class="fas fa-square square-yellow"></i>No hay horas, lo siento!<p>
+        <p><i class="fas fa-square square-red"></i> <strong>CERRADO</strong>, revisa nuevamente mañana!<p>
+
+  partials:
+    search_form:
+      step_1: "PASO 1"
+      step_1_text: "Necesito ayuda y estoy en:"
+      step_2: "PASO 2"
+      sleep: "NECESITO DORMIR"
+      stay: "NECESITO EN ALGÚN LUGAR PARA IR"
+      food: "NECESITO COMIDA"
+      talk: "NECESITO HABLAR"
+
+    onscreen_menu:
+      sleep: "Dormir"
+      stay: "Relajar"
+      food: "Comida"
+      help: "Ayuda"

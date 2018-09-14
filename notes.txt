@@ -1,26 +1,5 @@
-<% if location.hours.length == 2 && location.open_now  == "true" %>
-  <div class="loc-hours btn btn-primary bg-green">
-    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
-    <p class="hours center m0 p0">TO</p>
-    <p class="hours center m0 p0"><%= location.hours[1] %></p>
-  </div>
-<% elsif location.hours.length == 2 && location.open_now == "false" %>
-  <div class="loc-hours btn btn-primary bg-red">
-    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
-    <p class="hours center m0 p0"> TO </p>
-    <p class="hours center m0 p0"><%= location.hours[1] %></p>
-  </div>
-<% elsif location.hours[0] == "Open 24 hours" %>
-  <div class="loc-hours btn btn-primary bg-green">
-    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
-  </div>
-<% elsif location.hours.length == 1 %>
-  <div class="loc-hours btn btn-primary bg-red">
-    <p class="hours center m0 p0"> <%= location.hours[0] %></p>
-  </div>
-<% else %>
-  <div class="loc-hours btn btn-primary bg-gray">
-    <p class="hours center m0 p0">No</p>
-    <p class="hours center m0 p0">Hours </p>
-  </div>
-<% end %>
+* store locale in session
+  * string interpolate in URL?
+  * always include locale in URL?
+
+* write a helper for all links, call link_to send in link

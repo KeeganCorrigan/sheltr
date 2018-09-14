@@ -1,9 +1,14 @@
 <nav>
   <div class="clearfix">
     <div class="left">
-        <%= link_to "Sheltr", root_path, class:"btn" %>
+        <%= link_to "Sheltr", root_path, class:"btn"%>
     </div>
     <div class="right">
+        <% if I18n.locale == :es %>
+          <%= link_to "in english", translate_path(locale: "en"), method: "put", class:"btn btn-primary translate-button" %>
+        <% else %>
+            <%= link_to "en español", translate_path(locale: "es"), method: "put", class:"btn btn-primary translate-button" %>
+        <% end %>
       <div class='dropdown-toggle btn py0 m0' onClick=><i class="fas fa-bars"></i></div>
         <ul class='dropdown'>
           <% if current_user %>
