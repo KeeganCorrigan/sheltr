@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get "/search", to: "search#index"
   get "/about", to: "about#show"
 
+  resource :translate, only: [:update]
 
-  # Twilio route for reply
   resource :messages do
     collection do
       post 'reply'
