@@ -6,7 +6,7 @@ import Pin from './Pin'
 class Map extends React.Component {
   render () {
     return (
-      <div style={{width: '50%', height: '400px'}}>
+      <div className="map-container">
         <GoogleMap
           bootstrapURLKeys={{key: this.props.googleApiKey}}
           center={this.props.center}

@@ -32,18 +32,18 @@ class MapContainer extends React.Component {
     if (this.state.mapActive === false) {
       return (
         <button
-          className="btn btn-primary map-button"
+          className="map-button btn"
           onClick={this.handleButtonClick}
         >
-          View on Map
+          <i className="fas fa-map-marked-alt"></i>  View on Map
         </button>
       )} else {
         return (
           <button
-            className="btn btn-primary map-button"
+            className="map-button btn"
             onClick={this.handleButtonClick}
           >
-            Close Map
+            <i className="fas fa-window-close"></i>  Close Map
           </button>
         )
       }
