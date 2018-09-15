@@ -34,7 +34,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'pry'
   gem 'nyan-cat-formatter'
-  gem 'figaro'
   gem 'capybara'
   gem 'factory_bot_rails'
 end
