@@ -87,3 +87,13 @@ a {
   height: 500px;
   width: 500px;
 }
+
+.search-again-container {
+  display: none;
+}
+
+@media screen and (max-width: 730px) {
+  .search-again-container {
+    display: inline-block;
+  }
+}
