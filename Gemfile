@@ -21,6 +21,8 @@ gem 'geocoder'
 gem 'omniauth-google-oauth2'
 gem 'omniauth'
 gem 'twilio-ruby'
+gem 'react-rails'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

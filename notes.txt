@@ -47,3 +47,9 @@ function initMap() {
   var marker = new google.maps.Marker ({position: location, map: map<%= index %>});
 }
 </script>
+
+
+
+googleApiKey: ENV["GOOGLE_API_KEY"],
+center: [32.7096298,-117.1602029],
+zoom: 18

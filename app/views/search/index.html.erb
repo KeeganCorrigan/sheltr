@@ -1,4 +1,6 @@
 <main>
+  <%= react_component 'Directions', googleApiKey: ENV["GOOGLE_API_KEY"], center: [32.7096298,-117.1602029], zoom: 18 %>
+
   <div class="clearfix">
     <div class="sm-col sm-col-5">
         <%= render partial:"/partials/search_form" %>
@@ -21,9 +23,11 @@
                 <p class="formatted_phone_number info-text m0 p0"> <%= location.formatted_phone_number %></p>
                 <p class="website info-text m0 p0"> <%= link_to "More info", location.website %></p>
               </div>
+
             </div>
           </div>
           <br>
+
           <button
             class="btn btn-primary map-button"
             id="map<%= index %>"
@@ -33,8 +37,8 @@
           </button>
           <div id="map<%= index %>" class="map"></div>
 
-          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_API_KEY"] %>&callback=initMap"
-            async defer></script>
+          <!-- <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_API_KEY"] %>&callback=initMap"
+            async defer></script> -->
           <br>
         <% end %>
       </div>
