@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import GoogleMap from 'google-map-react';
+import Pin from './Pin'
 
 class Map extends React.Component {
   render () {
@@ -11,6 +12,10 @@ class Map extends React.Component {
           center={this.props.center}
           zoom={this.props.zoom}
         >
+        <Pin
+          lat={this.props.center[0]}
+          lng={this.props.center[1]}
+        />
         </GoogleMap>
       </div>
     );
