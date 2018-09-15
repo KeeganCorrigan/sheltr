@@ -19,7 +19,8 @@ describe Location, type: :model do
                              "Sunday: 12:00 – 5:00 PM"]
                           }
                         },
-                      open_now: true
+                      open_now: true,
+                      location: [39.7555567, -104.9881021]
                     }
 
     location_1 = Location.new(location_data)
@@ -28,6 +29,7 @@ describe Location, type: :model do
     expect(location_1.formatted_phone_number).to eq(location_data[:result][:formatted_phone_number])
     expect(location_1.website).to eq(location_data[:result][:website])
     expect(location_1.name).to eq(location_data[:result][:name])
+    expect(location_1.location).to eq(location_data[:location])
     expect(location_1.open_now).to eq("true")
     expect(location_1.hours.class).to eq(Array)
     expect(location_1.hours.class).to_not eq("unknown")
@@ -44,7 +46,8 @@ describe Location, type: :model do
                               website: "0j09j90ajdpoad",
                               name: "ij90jasp",
                             },
-                          open_now: true
+                          open_now: true,
+                          location: [39.7555567, -104.9881021]
                         }
 
         open_data = true
@@ -74,7 +77,8 @@ describe Location, type: :model do
                                  "Sunday: 12:00 – 5:00 PM"]
                               }
                             },
-                          open_now: "true"
+                          open_now: "true",
+                          location: [39.7555567, -104.9881021]
                         }
 
         location = Location.new(location_data)

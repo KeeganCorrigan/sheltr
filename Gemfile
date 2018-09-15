@@ -21,6 +21,8 @@ gem 'geocoder'
 gem 'omniauth-google-oauth2'
 gem 'omniauth'
 gem 'twilio-ruby'
+gem 'react-rails'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -32,7 +34,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'pry'
   gem 'nyan-cat-formatter'
-  gem 'figaro'
   gem 'capybara'
   gem 'factory_bot_rails'
 end

@@ -4,6 +4,11 @@
   font-size: 15px;
 }
 
+.map-container {
+  width: 100%;
+  height: 400px;
+}
+
 .closed-red {
   background-color: red;
 }
@@ -13,22 +18,24 @@
   align-items: center;
 }
 
-.bg-green {
-  background-color: $open-color;
+.bg-green, .bg-red, .bg-yellow {
+  color: black;
+  background-color: $light-color;
   width: 90%;
   padding: 10px;
+  cursor: auto;
+}
+
+.bg-green {
+  border-right: 4px solid $open-color;
 }
 
 .bg-red {
-  background-color: $closed-color;
-  width: 90%;
-  padding: 10px;
+  border-right: 4px solid $closed-color;
 }
 
-.bg-gray {
-  background-color: $unknown-color;
-  width: 90%;
-  padding: 10px;
+.bg-yellow {
+  border-right: 4px solid $unknown-color;
 }
 
 .hours {
@@ -37,6 +44,7 @@
 
 .loc-hours {
   text-align: center;
+  max-width: 80%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -56,12 +64,15 @@
   .bg-red {
     border-right: 2px solid $closed-color;
   }
-  .bg-gray {
+  .bg-yellow {
     border-right: 2px solid $unknown-color;
   }
 }
 
 @media screen and (max-width: 640px) {
+  .info-text {
+    font-size: 12px;
+  }
   .loc-hours {
     min-width: 70px;
     margin-right: 15px;

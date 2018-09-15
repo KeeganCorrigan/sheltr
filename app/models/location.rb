@@ -6,7 +6,8 @@ class Location
               :website,
               :open_now,
               :name,
-              :hours
+              :hours,
+              :location
 
   def initialize(data)
     @name = data[:result][:name]
@@ -15,6 +16,7 @@ class Location
     @website = data[:result][:website] || "Unknown"
     @open_now = data[:open_now].to_s || "Unknown"
     @hours = validate_hours(data) || "unknown"
+    @location = data[:location]
   end
 
   def hours_status
