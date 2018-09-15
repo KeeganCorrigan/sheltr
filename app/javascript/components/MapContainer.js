@@ -19,25 +19,41 @@ class MapContainer extends React.Component {
         />
       );
     } else {
-      return <div>Hi</div>
+      return null
     };
   };
 
   handleButtonClick = () => {
-    this.setState({mapActive: true})
+    const mapActive = this.state.mapActive ? false : true ;
+    this.setState({mapActive})
   };
+
+  renderButton = () => {
+    if (this.state.mapActive === false) {
+      return (
+        <button
+          className="btn btn-primary map-button"
+          onClick={this.handleButtonClick}
+        >
+          View on Map
+        </button>
+      )} else {
+        return (
+          <button
+            className="btn btn-primary map-button"
+            onClick={this.handleButtonClick}
+          >
+            Close Map
+          </button>
+        )
+      }
+    };
 
   render () {
     return (
       <div>
-
-      <button
-        className="btn btn-primary map-button"
-        onClick={this.handleButtonClick}
-      >
-        View on Map
-      </button>
-      {this.renderMap()}
+        {this.renderButton()}
+        {this.renderMap()}
       </div>
     )
   }
