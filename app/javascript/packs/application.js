@@ -10,5 +10,9 @@
 import MapContainer from 'components/MapContainer'
 import WebpackerReact from 'webpacker-react'
 import dropdown from 'packs/dropdown'
+import dropdown from 'packs/scroll_to_top'
+import dropdown from 'packs/search_scroll'
+
+
 
 WebpackerReact.setup({MapContainer})
