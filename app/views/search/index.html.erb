@@ -1,5 +1,5 @@
 <main>
-  <%= react_component 'Directions', googleApiKey: ENV["GOOGLE_API_KEY"], center: [32.7096298,-117.1602029], zoom: 18 %>
+
 
   <div class="clearfix">
     <div class="sm-col sm-col-5">
@@ -12,7 +12,6 @@
         <% @presenter.locations.each_with_index do |location, index| %>
           <div class="clearfix">
             <div class="location flex-row">
-              <p class="<%= index %>"><%= index %></p>
 
               <div class="sm-col sm-col-3">
                 <%= render partial:"/partials/#{location.hours_status}", :locals => {:location => location } %>
@@ -28,17 +27,7 @@
           </div>
           <br>
 
-          <button
-            class="btn btn-primary map-button"
-            id="map<%= index %>"
-            value="<%= location.location[0].to_s.html_safe %> <%= location.location[1].to_s.html_safe %>"
-          >
-            View on Map
-          </button>
-          <div id="map<%= index %>" class="map"></div>
-
-          <!-- <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_API_KEY"] %>&callback=initMap"
-            async defer></script> -->
+            <%= react_component 'MapContainer', googleApiKey: ENV["GOOGLE_API_KEY"], center: [location.location[0], location.location[1]], zoom: 18, locationIndex: index %>
           <br>
         <% end %>
       </div>

@@ -7,7 +7,7 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import Directions from 'components/Directions'
+import MapContainer from 'components/MapContainer'
 import WebpackerReact from 'webpacker-react'
 
-WebpackerReact.setup({Directions})
+WebpackerReact.setup({MapContainer})
