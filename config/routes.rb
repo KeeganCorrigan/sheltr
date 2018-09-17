@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   resource :translate, only: [:update]
 
+  namespace :admin do
+    resources :dashboard, only: [:index]
+  end
+
   resource :messages do
     collection do
       post 'reply'
