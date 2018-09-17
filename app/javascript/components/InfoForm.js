@@ -23,7 +23,7 @@ class InfoForm extends React.Component {
     const formSubmitted = this.state.formSubmitted ? false : true ;
     this.setState({formSubmitted})
 
-    axios.post(`http://localhost:3000/api/v1/comments`, params)
+    axios.post(`https://hidden-savannah-17675.herokuapp.com/api/v1/comments`, params)
       .then(res => {
         console.log(res);
         console.log(res.data);
