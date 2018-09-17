@@ -35,3 +35,13 @@ form .fas {
 	font-size: 24px;
 	color: red;
 }
+
+.active-button {
+	background-color: whitesmoke;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-color: lightgray;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-bottom-color: whitesmoke;
+}
