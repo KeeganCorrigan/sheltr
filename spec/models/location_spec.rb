@@ -21,7 +21,7 @@ describe Location, type: :model do
                         },
                       open_now: true,
                       location: [39.7555567, -104.9881021],
-                      place_id: 1
+                      place_id: "1"
                     }
 
     location_1 = Location.new(location_data)
@@ -82,11 +82,49 @@ describe Location, type: :model do
                             },
                           open_now: "true",
                           location: [39.7555567, -104.9881021],
-                          place_id: 1
+                          place_id: "1"
                         }
 
         location = Location.new(location_data)
         expect(location.hours_status).to eq("location_open_with_hours")
+      end
+    end
+
+    describe "#comments" do
+      it "returns all associated comments" do
+        location_data = {
+                          result:
+                            {
+                              formatted_address: "iojasdoij",
+                              formatted_phone_number: "0909jiad",
+                              website: "0j09j90ajdpoad",
+                              name: "ij90jasp",
+                              opening_hours: {
+                                 weekday_text: ["Monday: 10:00 AM – 5:00 PM",
+                                 "Tuesday: 10:00 AM – 5:00 PM",
+                                 "Wednesday: 10:00 AM – 5:00 PM",
+                                 "Thursday: 10:00 AM – 5:00 PM",
+                                 "Friday: 10:00 AM – 5:00 PM",
+                                 "Saturday: 11:00 AM – 5:00 PM",
+                                 "Sunday: 12:00 – 5:00 PM"]
+                              }
+                            },
+                          open_now: "true",
+                          location: [39.7555567, -104.9881021],
+                          place_id: "1"
+                        }
+
+        location = Location.new(location_data)
+
+        Comment.create!(body: "comment one", place_id: "1")
+        Comment.create!(body: "comment two", place_id: "1")
+
+        comments = location.comments
+        comment = comments.first
+
+        expect(comments.length).to eq(2)
+        expect(comment).to be_a(Hash)
+        expect(comment[:body]).to eq("comment one")
       end
     end
   end

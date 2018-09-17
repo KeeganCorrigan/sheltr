@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 * store locale in session
   * string interpolate in URL?
   * always include locale in URL?

@@ -35,6 +35,12 @@ class Location
     end
   end
 
+  def comments
+    Comment.where(place_id: @place_id).map do |comment|
+      {date: comment.created_at.strftime("%m-%d-%Y %I:%M %p"), body: comment.body}
+    end
+  end
+
   private
 
   def validate_hours(data)
