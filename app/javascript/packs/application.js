@@ -8,9 +8,11 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import MapContainer from 'components/MapContainer'
+import DashboardContainer from 'compononents/DashboardContainer'
 import WebpackerReact from 'webpacker-react'
 import dropdown from 'packs/dropdown'
 import scroll_to_top from 'packs/scroll_to_top'
 import search_scroll from 'packs/search_scroll'
 
 WebpackerReact.setup({MapContainer})
+WebpackerReact.setup({DashboardContainer})
