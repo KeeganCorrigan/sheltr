@@ -13,6 +13,8 @@ class GooglePlacePresenter
   end
 
   def first_open_location
+    return "No open locations nearby. Make sure you input the city or zip code correctly." if locations.length == 0
+
     locations.find do |location|
       if location.open_now == "true"
         return "#{location.name} is open.

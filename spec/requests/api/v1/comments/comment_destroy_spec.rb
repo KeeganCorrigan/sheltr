@@ -14,4 +14,12 @@ describe 'delete /api/v1/comments' do
     expect(Comment.count).to eq(0)
     expect(payload[:message]).to eq("Comment deleted")
   end
+
+  it "can not delete a comment if not an admin" do
+    comment = create(:comment)
+
+    delete "/api/v1/comments/#{comment.id}"
+
+    expect(Comment.count).to eq(1)
+  end
 end

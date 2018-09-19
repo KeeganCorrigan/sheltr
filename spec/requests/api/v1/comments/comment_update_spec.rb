@@ -15,4 +15,13 @@ describe 'update /api/v1/comments' do
     expect(comment.approved).to eq(true)
     expect(payload[:message]).to eq("Comment approved")
   end
+
+  it "can not update a comment if not an admin" do
+    comment = create(:comment)
+
+    put "/api/v1/comments/#{comment.id}"
+
+    comment.reload
+    expect(comment.approved).to eq(false)
+  end
 end

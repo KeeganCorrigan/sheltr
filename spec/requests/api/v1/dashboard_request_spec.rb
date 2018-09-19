@@ -6,6 +6,7 @@ describe 'get /api/v1/admin/dashboard' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     create_list(:comment, 3)
+    create(:comment, approved: true)
 
     get "/api/v1/dashboard"
 
