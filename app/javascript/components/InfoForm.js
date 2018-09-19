@@ -29,7 +29,6 @@ class InfoForm extends React.Component {
         console.log(res.data);
     })
   }
-
   renderForm = () => {
     if (this.state.formSubmitted === false) {
       return (
