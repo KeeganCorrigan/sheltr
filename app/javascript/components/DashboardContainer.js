@@ -12,7 +12,7 @@ class DashboardContainer extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://hidden-savannah-17675.herokuapp.com/api/v1/dashboard`)
+    axios.get(`https://needsheltr.herokuapp.com/api/v1/dashboard`)
       .then(res => {
         const comments = res;
         this.setState({ comments });

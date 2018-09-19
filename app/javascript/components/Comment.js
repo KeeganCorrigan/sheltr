@@ -14,7 +14,7 @@ class Comment extends React.Component {
 
     deleteComment = event => {
 
-      axios.delete(`https://hidden-savannah-17675.herokuapp.com/api/v1/comments/${event}`)
+      axios.delete(`https://needsheltr.herokuapp.com/api/v1/comments/${event}`)
         .then(res => {
         })
 
@@ -23,7 +23,7 @@ class Comment extends React.Component {
 
     approveComment = event => {
 
-      axios.patch(`https://hidden-savannah-17675.herokuapp.com/api/v1/comments/${event}`)
+      axios.patch(`https://needsheltr.herokuapp.com/api/v1/comments/${event}`)
         .then(res => {
         })
 
