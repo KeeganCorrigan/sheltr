@@ -3,7 +3,7 @@ require "rails_helper"
 describe 'post /api/v1/comments' do
   it "can create a comment" do
     comment_body = "oijasdoijoajsd"
-    json_payload = {body: comment_body , place_id: 1112}
+    json_payload = { body: comment_body , place_id: 1112 }
 
     post "/api/v1/comments", params: json_payload
 

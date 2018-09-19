@@ -7,5 +7,6 @@ FactoryBot.define do
     open_now  "true"
     hours  ["4:30 PM", "8:00 AM"]
     location [39.7555567, -104.9881021]
+    place_id "1234"
   end
 end

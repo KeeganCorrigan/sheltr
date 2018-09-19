@@ -36,7 +36,7 @@ class Location
   end
 
   def comments
-    Comment.where(place_id: @place_id).map do |comment|
+    Comment.where("place_id = ? and approved = ?", @place_id, true).map do |comment|
       {date: comment.created_at.strftime("%m-%d-%Y %I:%M %p"), body: comment.body}
     end
   end

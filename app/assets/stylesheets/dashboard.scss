@@ -1,0 +1,44 @@
+@import "shared_values";
+
+.comments-approval-container {
+  .fa-check-circle {
+    color: $open-color;
+  }
+  .fa-minus-circle {
+    color: $closed-color;
+  }
+  .comment-deleted {
+    font-size: 25px;
+  }
+  .comment-approved {
+    font-size: 25px;
+  }
+  .comment-approval-container {
+    border-bottom: 1px solid whitesmoke;
+    padding: 5px;
+    margin: 1px;
+  }
+  .comment-created-at {
+    font-size: 14px;
+    margin: 2px;
+    padding: 1px;
+  }
+  .comment-text {
+    font-style: italic;
+    margin: 5px;
+    padding: 5px;
+  }
+  .approval-buttons {
+    font-size: 20px;
+
+    .approval-button {
+      background-color: whitesmoke;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    .approval-button:hover {
+      border: 1px solid lightgray;
+    }
+  }
+}
