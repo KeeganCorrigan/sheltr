@@ -14,7 +14,6 @@ class MapContainer extends React.Component {
   };
 }
   renderMap() {
-    console.log("comments yo!", this.props.comments)
     if (this.state.mapActive === true) {
       return (
         < Map
