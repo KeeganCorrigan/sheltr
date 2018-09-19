@@ -53,8 +53,6 @@ describe Location, type: :model do
                           place_id: 1
                         }
 
-        open_data = true
-
         location_1 = Location.new(location_data)
 
         expect(location_1.hours).to eq("unknown")
@@ -116,13 +114,13 @@ describe Location, type: :model do
 
         location = Location.new(location_data)
 
-        Comment.create!(body: "comment one", place_id: "1")
+        Comment.create!(body: "comment one", place_id: "1", approved: true)
         Comment.create!(body: "comment two", place_id: "1")
 
         comments = location.comments
         comment = comments.first
 
-        expect(comments.length).to eq(2)
+        expect(comments.length).to eq(1)
         expect(comment).to be_a(Hash)
         expect(comment[:body]).to eq("comment one")
       end

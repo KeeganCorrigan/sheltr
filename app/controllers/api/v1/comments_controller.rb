@@ -1,4 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
+  before_action :require_admin, only: [:destroy, :update]
   skip_before_action :verify_authenticity_token
 
   def create
@@ -14,6 +15,7 @@ class Api::V1::CommentsController < ApplicationController
   def destroy
     comment = Comment.find(params[:id])
     comment.destroy
+    render json: { message: "Comment deleted" }, status: 200
   end
 
   def update
@@ -21,6 +23,7 @@ class Api::V1::CommentsController < ApplicationController
     if @comment.approved == false
       @comment.approved = true
       @comment.save
+      render json: { message: "Comment approved" }, status: 200
     end
   end
 end
