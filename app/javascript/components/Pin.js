@@ -7,3 +7,11 @@ export default class Pin extends React.Component {
     )
   }
 }
+
+// export const Pin = () => {
+//   return (
+//     <div><i className="fas fa-map-marker-alt"></i></div>
+//   )
+// }
+//
+// import { Pin } from 'pin'

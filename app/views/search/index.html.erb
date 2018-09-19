@@ -27,12 +27,15 @@
                 <p class="name info-text m0 p0"> <%= location.name %></p>
                 <p class="formatted_address info-text m0 p0"> <%= location.formatted_address %></p>
                 <p class="formatted_phone_number info-text m0 p0"> <%= location.formatted_phone_number %></p>
-                <p class="website info-text m0 p0"> <%= link_to "More info", location.website %></p>
+                <p class="website info-text m0 p0"> <%= link_to "Visit website", location.website %></p>
               </div>
 
             </div>
           </div>
-          <%= react_component 'MapContainer', googleApiKey: ENV["GOOGLE_API_KEY"], center: [location.location[0], location.location[1]], zoom: 15, locationIndex: index %>
+
+          <div class="component-container">
+            <%= react_component 'MapContainer', googleApiKey: ENV["GOOGLE_API_KEY"], center: [location.location[0], location.location[1]], zoom: 15, placeId: location.place_id, comments: location.comments %>
+          </div>
           <br>
         <% end %>
       </div>

@@ -7,7 +7,8 @@ class Location
               :open_now,
               :name,
               :hours,
-              :location
+              :location,
+              :place_id
 
   def initialize(data)
     @name = data[:result][:name]
@@ -17,6 +18,7 @@ class Location
     @open_now = data[:open_now].to_s || "Unknown"
     @hours = validate_hours(data) || "unknown"
     @location = data[:location]
+    @place_id = data[:place_id]
   end
 
   def hours_status
@@ -30,6 +32,12 @@ class Location
       return "location_closed"
     else
       return "location_hours_unknown"
+    end
+  end
+
+  def comments
+    Comment.where("place_id = ? and approved = ?", @place_id, true).map do |comment|
+      {date: comment.created_at.strftime("%m-%d-%Y %I:%M %p"), body: comment.body}
     end
   end
 

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :comments, only: [:create, :destroy, :update]
+      resources :dashboard, only: [:index]
+    end
+  end
+
   get 'messages/reply'
 
   get "/auth/google_oauth2/callback", to: "sessions#create"
@@ -11,6 +18,10 @@ Rails.application.routes.draw do
   get "/about", to: "about#show"
 
   resource :translate, only: [:update]
+
+  namespace :admin do
+    resources :dashboard, only: [:index]
+  end
 
   resource :messages do
     collection do

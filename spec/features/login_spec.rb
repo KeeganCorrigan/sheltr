@@ -11,8 +11,6 @@ describe "a user visits / " do
 
       expect(current_path).to eq("/")
 
-      # expect(page).to have_content("Logout")
-      # expect(page).to_not have_content("Login")
       expect(User.count).to eq(1)
     end
   end

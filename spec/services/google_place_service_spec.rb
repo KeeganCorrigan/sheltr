@@ -10,8 +10,9 @@ describe GooglePlaceService do
           location = "Denver"
 
           locations = gps.locations(type, location)
+
           location = locations.first
-          
+
           expect(location).to have_key(:result)
           expect(location[:result]).to have_key(:formatted_address)
           expect(location[:result]).to have_key(:formatted_phone_number)
