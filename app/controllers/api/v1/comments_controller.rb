@@ -6,7 +6,7 @@ class Api::V1::CommentsController < ApplicationController
     comment.body = params[:body]
     comment.place_id = params[:place_id]
     if comment.save!
-      render json: { message: "it worked" }, status: 200
+      render json: { message: "Comment created" }, status: 200
       flash[:success] = "Comment submitted for approval."
     end
   end
