@@ -12,32 +12,12 @@ class DashboardContainer extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3000/api/v1/dashboard`)
+    axios.get(`https://hidden-savannah-17675.herokuapp.com/api/v1/dashboard`)
       .then(res => {
         const comments = res;
         this.setState({ comments });
       })
   }
-
-  deleteComment = event => {
-
-    axios.delete(`http://localhost:3000/api/v1/comments/${event}`)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
-  };
-
-  approveComment = event => {
-
-    axios.patch(`http://localhost:3000/api/v1/comments/${event}`)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
-  };
-
-
 
   renderComments = () => {
     return (
