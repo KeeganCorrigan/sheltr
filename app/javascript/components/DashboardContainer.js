@@ -44,13 +44,3 @@ class DashboardContainer extends React.Component {
 }
 
 export default DashboardContainer
-
-// { this.state.comments.data && this.state.comments.data.map(comment => <div className="comment-approval-container">
-//   <p className="comment-created-at">Posted on {comment.created_at.split('T')[0]}</p>
-//   <p className="comment-text">"{comment.body}"</p>
-//   <div className="approval-buttons">
-//     <button className="btn approval-button" onClick={()=>{this.approveComment(comment.id)}}> <i className="far fa-thumbs-up"></i></button>
-//     <button className="btn approval-button" onClick={()=>{this.deleteComment(comment.id)}}> <i className="far fa-thumbs-down"></i></button>
-//   </div>
-//
-// </div>)}
